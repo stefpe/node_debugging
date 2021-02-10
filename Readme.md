@@ -1,5 +1,7 @@
-# Run web application
+# Run script
+docker run --rm -it -v $PWD/script:/app -w /app -p 9229:9229 node:12-alpine node --inspect-brk=0.0.0.0:9229 test.js
 
+# Run web application
 docker run --rm -it -v $PWD/web_app:/app -w /app -p 8080:3000 -p 9229:9229 node:12-alpine node --inspect-brk=0.0.0.0:9229 index.js
 
 # Run AWS lamdba serverless function
